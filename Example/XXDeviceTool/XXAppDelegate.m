@@ -7,12 +7,23 @@
 //
 
 #import "XXAppDelegate.h"
+#import <XXDeviceTool/DeviceTool.h>
+
 
 @implementation XXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    NSString *uuid = [DeviceTool sharedInstance].uuid;
+    NSLog(@"uuid:%@",uuid);
+    NSString *model = [DeviceTool sharedInstance].deviceModel;
+    NSLog(@"model:%@",model);
+    
+    CGFloat szie = [DeviceTool sharedInstance].availableDiskSize;
+    NSLog(@"szie:%.2f",szie);
+
+    
     return YES;
 }
 

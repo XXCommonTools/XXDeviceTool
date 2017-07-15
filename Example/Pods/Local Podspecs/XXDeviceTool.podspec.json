@@ -1,0 +1,27 @@
+{
+  "name": "XXDeviceTool",
+  "version": "0.1.0",
+  "summary": "XXDeviceTool",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/XXCommonTools/XXDeviceTool",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "yangzi": "595919268@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/XXCommonTools/XXDeviceTool.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "XXDeviceTool/Classes/**/*",
+  "dependencies": {
+    "SSKeychain": [
+
+    ]
+  }
+}

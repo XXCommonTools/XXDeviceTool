@@ -1,0 +1,6 @@
+framework module XXDeviceTool {
+  umbrella header "XXDeviceTool-umbrella.h"
+
+  export *
+  module * { export * }
+}
