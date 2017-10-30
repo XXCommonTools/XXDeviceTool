@@ -1,8 +1,8 @@
 {
   "name": "XXDeviceTool",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "XXDeviceTool",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "XXDeviceTool 获取UUID 和设备型号",
   "homepage": "https://github.com/XXCommonTools/XXDeviceTool",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/XXCommonTools/XXDeviceTool.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "8.0"

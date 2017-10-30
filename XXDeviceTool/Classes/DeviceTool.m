@@ -18,10 +18,6 @@
 ///设备的UUID
 @property (copy,nonatomic,readwrite) NSString *uuid;
 
-
-@property (copy,nonatomic) NSString *xxFirstLaunchKey;
-@property (copy,nonatomic) NSString *xxFirstLaunchValue;
-@property (copy,nonatomic) NSString *xxSandBoxUUIDKey;
 @property (copy,nonatomic) NSString *xxKeyChainService;
 @property (copy,nonatomic) NSString *xxKeyChainAccount;
 
@@ -76,21 +72,14 @@
 
     self.uuid = nil;
     [SSKeychain deletePasswordForService:self.xxKeyChainService account:self.xxKeyChainAccount];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:self.xxSandBoxUUIDKey];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:self.xxFirstLaunchKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 - (void)setUpUUID:(NSString *)uuid {
 
     if (uuid.length > 0) {
         
         self.uuid = uuid;
-        
         //保存到钥匙链中和沙盒中
         [self saveUUIDToKeyChain:uuid service:self.xxKeyChainService account:self.xxKeyChainAccount];
-        [[NSUserDefaults standardUserDefaults] setObject:uuid forKey:self.xxSandBoxUUIDKey];
-        [[NSUserDefaults standardUserDefaults] setObject:self.xxFirstLaunchValue forKey:self.xxFirstLaunchKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 #pragma mark - getters and setters
@@ -98,52 +87,19 @@
 
     if (!_uuid) {
         
-        NSString *finalUUID = nil;
-        NSString *firstLaunchValue = [[NSUserDefaults standardUserDefaults] objectForKey:self.xxFirstLaunchKey];
-        if ([firstLaunchValue isEqualToString:self.xxFirstLaunchValue]) {
+        //去钥匙链中获取uuid
+        NSString *keyChainUUID = [SSKeychain passwordForService:self.xxKeyChainService account:self.xxKeyChainAccount];
+        if (keyChainUUID) {
             
-            //不是第一次启动
-            NSString *sandBoxUUID = [[NSUserDefaults standardUserDefaults] objectForKey:self.xxSandBoxUUIDKey];
-            NSString *keyChainUUID = [SSKeychain passwordForService:self.xxKeyChainService account:self.xxKeyChainAccount];
+            _uuid = keyChainUUID;
             
-            finalUUID = sandBoxUUID;
-            if (![sandBoxUUID isEqualToString:keyChainUUID]) {
-                
-                //修改钥匙链中的 UUID
-                [self saveUUIDToKeyChain:sandBoxUUID service:self.xxKeyChainService account:self.xxKeyChainAccount];
-            }
         } else {
-            
-            //是第一次启动
             
             //获取 uuid 存到沙盒
             NSString *systemUUID = [UIDevice currentDevice].identifierForVendor.UUIDString;
-            //去钥匙链中获取uuid
-            NSString *keyChainUUID = [SSKeychain passwordForService:self.xxKeyChainService account:self.xxKeyChainAccount];
-            
-            if (keyChainUUID) {
-                
-                if (![keyChainUUID isEqualToString:systemUUID]) {
-                    
-                    //用户不是第一次安装应用，以前卸载过，重新安装的,此时用钥匙链中的UUID
-                    //修改系统的UUID
-                    systemUUID = keyChainUUID;
-                }
-                
-            } else {
-                
-                //用户第一次安装应用且第一次启动该应用
-                [self saveUUIDToKeyChain:systemUUID service:self.xxKeyChainService account:self.xxKeyChainAccount];
-            }
-            //保存到沙盒
-            [[NSUserDefaults standardUserDefaults] setObject:systemUUID forKey:self.xxSandBoxUUIDKey];
-            [[NSUserDefaults standardUserDefaults] setObject:self.xxFirstLaunchValue forKey:self.xxFirstLaunchKey];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            finalUUID = systemUUID;
+            _uuid = systemUUID;
+            [self saveUUIDToKeyChain:systemUUID service:self.xxKeyChainService account:self.xxKeyChainAccount];
         }
-        
-        _uuid = finalUUID;
     }
     return _uuid;
 }
@@ -156,30 +112,6 @@
         freeSpace = (unsigned long long)(buf.f_bsize * buf.f_bavail);
     }
     return freeSpace / 1024.0f / 1024.0f;
-}
-- (NSString *)xxFirstLaunchKey {
-    
-    if (!_xxFirstLaunchKey) {
-        
-        _xxFirstLaunchKey = @"XXDeviceFirstLaunchKey";
-    }
-    return _xxFirstLaunchKey;
-}
-- (NSString *)xxFirstLaunchValue {
-    
-    if (!_xxFirstLaunchValue) {
-        
-        _xxFirstLaunchValue = @"XXDeviceFirstLaunchValue";
-    }
-    return _xxFirstLaunchValue;
-}
-- (NSString *)xxSandBoxUUIDKey {
-    
-    if (!_xxSandBoxUUIDKey) {
-        
-        _xxSandBoxUUIDKey = @"XXDeviceSandBoxUUIDKey";
-    }
-    return _xxSandBoxUUIDKey;
 }
 - (NSString *)xxKeyChainService {
     
@@ -302,6 +234,30 @@
         } else if ([platform isEqualToString:@"iPhone9,2"]) {
             
             _deviceModel = @"iPhone7Plus";
+            
+        } else if ([platform isEqualToString:@"iPhone10,1"]) {
+            
+            _deviceModel = @"iPhone8";
+            
+        } else if ([platform isEqualToString:@"iPhone10,4"]) {
+            
+            _deviceModel = @"iPhone8";
+            
+        } else if ([platform isEqualToString:@"iPhone10,2"]) {
+            
+            _deviceModel = @"iPhone8Plus";
+            
+        } else if ([platform isEqualToString:@"iPhone10,5"]) {
+            
+            _deviceModel = @"iPhone8Plus";
+            
+        } else if ([platform isEqualToString:@"iPhone10,3"]) {
+            
+            _deviceModel = @"iPhoneX";
+            
+        } else if ([platform isEqualToString:@"iPhone10,6"]) {
+            
+            _deviceModel = @"iPhoneX";
             
         } else if ([platform isEqualToString:@"iPod1,1"]) {
             

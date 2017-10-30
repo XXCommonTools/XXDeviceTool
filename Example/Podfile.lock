@@ -1,6 +1,6 @@
 PODS:
   - SSKeychain (1.4.1)
-  - XXDeviceTool (0.1.0):
+  - XXDeviceTool (0.1.1):
     - SSKeychain
 
 DEPENDENCIES:
@@ -12,8 +12,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
-  XXDeviceTool: 11ad3fa428a1894ff5b5edeca74f34fcf4aeceec
+  XXDeviceTool: 5d315dd3b86c5a2a784d0f97050b18ba21c1bbc6
 
 PODFILE CHECKSUM: a258ebbb3be09b198daaa5affa5eb264617547d6
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1
