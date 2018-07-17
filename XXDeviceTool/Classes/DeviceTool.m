@@ -404,7 +404,7 @@
             
             _deviceModel = @"iPhoneSimulator";
             
-        } else if (platform.length == 0) {
+        } else {
             
             _deviceModel = [UIDevice currentDevice].localizedModel;
         }
