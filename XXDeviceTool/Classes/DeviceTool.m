@@ -259,6 +259,22 @@
             
             _deviceModel = @"iPhoneX";
             
+        } else if ([platform isEqualToString:@"iPhone11,2"]) {
+            
+            _deviceModel = @"iPhoneXS";
+            
+        } else if ([platform isEqualToString:@"iPhone11,4"]) {
+            
+            _deviceModel = @"iPhoneXS Max";
+            
+        } else if ([platform isEqualToString:@"iPhone11,6"]) {
+            
+            _deviceModel = @"iPhoneXS Max";
+            
+        } else if ([platform isEqualToString:@"iPhone11,8"]) {
+            
+            _deviceModel = @"iPhoneXR";
+            
         } else if ([platform isEqualToString:@"iPod1,1"]) {
             
             //iPod Touch
@@ -350,7 +366,27 @@
             
             _deviceModel = @"iPadAir2";
             
-        } else if ([platform isEqualToString:@"iPad2,5"]) {
+        } else if ([platform isEqualToString:@"iPad6,7"] || [platform isEqualToString:@"iPad6,8"]) {
+            
+            _deviceModel = @"iPad Pro 12.9-inch";
+            
+        } else if ([platform isEqualToString:@"iPad6,3"] || [platform isEqualToString:@"iPad6,4"]) {
+            
+            _deviceModel = @"iPad Pro iPad 9.7-inch";
+            
+        } else if ([platform isEqualToString:@"iPad6,11"] || [platform isEqualToString:@"iPad6,12"]) {
+            
+            _deviceModel = @"iPad 5";
+            
+        } else if ([platform isEqualToString:@"iPad7,1"] || [platform isEqualToString:@"iPad7,2"]) {
+            
+            _deviceModel = @"iPad Pro 12.9-inch 2";
+        
+        }  if ([platform isEqualToString:@"iPad7,3"] || [platform isEqualToString:@"iPad7,4"]) {
+            
+            _deviceModel = @"iPad Pro 10.5-inch";
+        
+        }else if ([platform isEqualToString:@"iPad2,5"]) {
             
             //iPad mini
             _deviceModel = @"iPadmini1G";
