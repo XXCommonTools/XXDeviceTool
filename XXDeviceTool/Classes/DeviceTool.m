@@ -287,6 +287,22 @@
                    
             _deviceModel = @"iPhone11ProMax";
                    
+        } else if ([platform isEqualToString:@"iPhone13,1"]) {
+            
+            _deviceModel = @"iPhone12mini";
+            
+        } else if ([platform isEqualToString:@"iPhone13,2"]) {
+            
+            _deviceModel = @"iPhone12";
+            
+        } else if ([platform isEqualToString:@"iPhone13,3"]) {
+            
+            _deviceModel = @"iPhone12Pro";
+            
+        } else if ([platform isEqualToString:@"iPhone13,4"]) {
+            
+            _deviceModel = @"iPhone12ProMax";
+            
         } else if ([platform isEqualToString:@"iPod1,1"]) {//iPod
             
             //iPod Touch
@@ -373,6 +389,10 @@
             
             _deviceModel = @"iPad7";
             
+        } else if ([platform isEqualToString:@"iPad11,6"] || [platform isEqualToString:@"iPad11,7"]) {
+            
+            _deviceModel = @"iPad8";
+            
         } else if ([platform isEqualToString:@"iPad4,1"]) {//air
             
             //iPad Air
@@ -402,6 +422,8 @@
             
             _deviceModel = @"iPadAir3";
             
+        } else if ([platform isEqualToString:@"iPad13,1"] || [platform isEqualToString:@"iPad12,2"]) {
+            _deviceModel = @"iPadAir4";
         } else if ([platform isEqualToString:@"iPad6,7"] || [platform isEqualToString:@"iPad6,8"]) {//ipad pro
             
             _deviceModel = @"iPadPro 12.9-inch";
@@ -426,6 +448,14 @@
             
             _deviceModel = @"iPadPro 12.9-inch3";
         
+        } else if ([platform isEqualToString:@"iPad8,9"] || [platform isEqualToString:@"iPad8,10"]) {
+            
+            _deviceModel = @"iPadPro 11-inch 2";
+            
+        } else if ([platform isEqualToString:@"iPad8,11"] || [platform isEqualToString:@"iPad8,12"]) {
+            
+            _deviceModel = @"iPadPro 12.9-inch 4";
+            
         } else if ([platform isEqualToString:@"iPad2,5"]) {//mini
             
             //iPad mini

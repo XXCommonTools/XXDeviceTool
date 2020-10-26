@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XXDeviceTool'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'XXDeviceTool'
   s.description      = 'XXDeviceTool 获取UUID 和设备型号'
   s.homepage         = 'https://github.com/XXCommonTools/XXDeviceTool'
