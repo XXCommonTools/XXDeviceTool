@@ -221,11 +221,11 @@
             
         } else if ([platform isEqualToString:@"iPhone8,3"]) {
             
-            _deviceModel = @"iPhoneSE";
+            _deviceModel = @"iPhoneSE(1st generation)";
             
         } else if ([platform isEqualToString:@"iPhone8,4"]) {
             
-            _deviceModel = @"iPhoneSE";
+            _deviceModel = @"iPhoneSE(1st generation)";
             
         } else if ([platform isEqualToString:@"iPhone9,1"] || [platform isEqualToString:@"iPhone9,3"]) {
             
@@ -287,6 +287,10 @@
                    
             _deviceModel = @"iPhone11ProMax";
                    
+        } else if ([platform isEqualToString:@"iPhone12,8"]) {
+            
+            _deviceModel = @"iPhoneSE(2nd generation)";
+                   
         } else if ([platform isEqualToString:@"iPhone13,1"]) {
             
             _deviceModel = @"iPhone12mini";
@@ -303,7 +307,27 @@
             
             _deviceModel = @"iPhone12ProMax";
             
-        } else if ([platform isEqualToString:@"iPod1,1"]) {//iPod
+        } else if ([platform isEqualToString:@"iPhone14,4"]) {
+            
+            _deviceModel = @"iPhone13mini";
+            
+        } else if ([platform isEqualToString:@"iPhone14,5"]) {
+            
+            _deviceModel = @"iPhone13";
+            
+        } else if ([platform isEqualToString:@"iPhone14,2"]) {
+            
+            _deviceModel = @"iPhone13Pro";
+            
+        } else if ([platform isEqualToString:@"iPhone14,3"]) {
+            
+            _deviceModel = @"iPhone13ProMax";
+            
+        } else if ([platform isEqualToString:@"iPhone14,6"]) {
+            
+            _deviceModel = @"iPhoneSE(3rd generation)";
+            
+        }  else if ([platform isEqualToString:@"iPod1,1"]) {//iPod
             
             //iPod Touch
             _deviceModel = @"iPodTouch";
@@ -393,6 +417,10 @@
             
             _deviceModel = @"iPad8";
             
+        } else if ([platform isEqualToString:@"iPad12,1"] || [platform isEqualToString:@"iPad12,2"]) {
+            
+            _deviceModel = @"iPad9";
+            
         } else if ([platform isEqualToString:@"iPad4,1"]) {//air
             
             //iPad Air
@@ -422,8 +450,14 @@
             
             _deviceModel = @"iPadAir3";
             
-        } else if ([platform isEqualToString:@"iPad13,1"] || [platform isEqualToString:@"iPad12,2"]) {
+        } else if ([platform isEqualToString:@"iPad13,1"] || [platform isEqualToString:@"iPad13,2"]) {
+            
             _deviceModel = @"iPadAir4";
+            
+        } else if ([platform isEqualToString:@"iPad13,16"] || [platform isEqualToString:@"iPad13,17"]) {
+            
+            _deviceModel = @"iPadAir5";
+            
         } else if ([platform isEqualToString:@"iPad6,7"] || [platform isEqualToString:@"iPad6,8"]) {//ipad pro
             
             _deviceModel = @"iPadPro 12.9-inch";
@@ -455,6 +489,14 @@
         } else if ([platform isEqualToString:@"iPad8,11"] || [platform isEqualToString:@"iPad8,12"]) {
             
             _deviceModel = @"iPadPro 12.9-inch 4";
+            
+        } else if ([platform isEqualToString:@"iPad13,4"] || [platform isEqualToString:@"iPad13,5"] || [platform isEqualToString:@"iPad13,6"] || [platform isEqualToString:@"iPad13,7"]) {
+            
+            _deviceModel = @"iPadPro 11-inch 3";
+            
+        } else if ([platform isEqualToString:@"iPad13,8"] || [platform isEqualToString:@"iPad13,9"] || [platform isEqualToString:@"iPad13,10"] || [platform isEqualToString:@"iPad13,11"]) {
+            
+            _deviceModel = @"iPadPro 12.9-inch 5";
             
         } else if ([platform isEqualToString:@"iPad2,5"]) {//mini
             
@@ -509,6 +551,14 @@
         } else if ([platform isEqualToString:@"iPad11,2"]) {
             
             _deviceModel = @"iPadmini5";
+            
+        } else if ([platform isEqualToString:@"iPad14,1"]) {
+            
+            _deviceModel = @"iPadmini6";
+            
+        } else if ([platform isEqualToString:@"iPad14,2"]) {
+            
+            _deviceModel = @"iPadmini6";
             
         } else if ([platform isEqualToString:@"i386"]) {
             
